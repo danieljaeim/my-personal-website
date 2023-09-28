@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
+    'gatsby-plugin-smoothscroll',
     {
       resolve: `gatsby-omni-font-loader`,
       options: {
