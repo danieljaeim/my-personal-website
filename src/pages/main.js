@@ -2,21 +2,25 @@ import * as React from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { AiFillLinkedin } from "react-icons/ai";
 import { BiLogoGmail } from "react-icons/bi";
+import { HiExternalLink } from "react-icons/hi"
 
 import scrollTo from "gatsby-plugin-smoothscroll";
 import testImg from "../images/icon.png"
 import ivyVines from "../images/ivy-vines.jpg"
 
+import "../css/main.css"
+
 const pageStyle = {
   display: "flex",
   alignitems: "center",
   justifyContent: "start",
-  backgroundColor: "#DDD0C8",
+  backgroundColor: "#121212",
   width: "100vw",
   height: "100vh",
   margin: "0",
   padding: "0",
   fontFamily: "Verdana, sans-serif",
+  lineHeight: "1.5"
 };
 
 /**
@@ -26,7 +30,7 @@ const pageStyle = {
 const sideHeader = {
   position: "fixed",
   display: "flex",
-  backgroundColor: "#DDD0C8",
+  backgroundColor: "#121212",
   height: "100vh",
   width: "50vw",
   alignSelf: "self-start",
@@ -58,7 +62,7 @@ const titleStyle = {
   fontFamily: "Segoe UI, Arial, sans-serif",
   fontWeight: "bold",
   margin: "5px",
-  color: "#292929",
+  color: "#FFFFFF",
 };
 
 const subTitleStyle = {
@@ -66,29 +70,30 @@ const subTitleStyle = {
   fontSize: "1.2rem",
   // border: "1px solid black",
   margin: "-10px 0px 0px 7px",
-  fontFamily: "Segoe UI, Arial, sans-serif",
+  fontFamily: "Verdana, sans-serif",
   fontWeight: "bold",
-  color: "#292929",
+  color: "#FFFFFF",
 };
 
 const descriptionTitleStyle = {
   alignSelf: "start",
   fontSize: "1rem",
   // border: "1px solid black",
-  fontFamily: "Helvetica Neue",
-  margin: "10px 0px 0px 7px",
-  color: "#292929",
+  fontFamily: "Verdana, sans-serif",
+  margin: "15px 0px 0px 7px",
+  color: "#ADADAD",
+  lineHeight: "1.3"
 };
 
 const linkContainer = {
-  // border: "1px solid black",
   fontSize: "2.5em",
   flexDirection: "row",
   justifyContent: "space-between",
   alignSelf: "start",
-  height: "10vh",
+  height: "12vh",
   width: "60%",
   margin: "10vh 5vh 0 5vh",
+  color: "#ADADAD"
 };
 
 const linkStyle = {
@@ -111,13 +116,13 @@ const socialsContainer = {
   width: "65%",
   // border: "1px solid black",
   margin: "10vh 5vh 0 5vh",
+  color: "#FFFFFF"
 };
 
 const socialStyle = {
   alignSelf: "start",
   height: "2.5rem",
   width: "2.5rem",
-  border: "1.5px solid black",
   margin: "0px 10px 0px 0px",
 };
 
@@ -128,7 +133,7 @@ const socialStyle = {
 const scrollSection = {
   position: "absolute",
   display: "flex",
-  backgroundColor: "#DDD0C8",
+  backgroundColor: "#121212",
   height: "600vh",
   width: "50vw",
   alignSelf: "end",
@@ -149,10 +154,11 @@ const originStyle = {
   width: "450px",
   height: "450px",
   margin: "5vh 0 0 25px",
-  color: "#292929",
-  fontSize: "14.2px",
+  color: "#999999",
+  fontSize: "14px",
   fontWeight: "400",
   fontFamily: "Verdana, sans-serif",
+  lineHeight: "1.5"
 };
 
 const experienceListContainer = {
@@ -166,41 +172,51 @@ const experienceListContainer = {
 
 const experienceStyle = {
   display: "flex",
-  width: "450px",
-  height: "275px",
-  // border: "1px solid white",
+  width: "550px",
+  height: "auto",
   color: "black",
-  margin: "0rem 0 1rem 0",
+  margin: "1rem 0 1rem 0",
+  padding: "25px 10px 25px 10px",
+//   border: "1px solid black"
 };
 
 const experienceDateHeader = {
   position: "relative",
   height: "100%",
-  width: "35%",
+  width: "30%",
   fontSize: ".8rem",
-  top: "5px",
-  // border: "1px solid white",
+  left: "-10px",
+  top: "3px",
+  fontWeight: "500",
+  color: "#B8B8B8",
+//   border: "1px solid white",
 };
 
 const experienceCard = {
   position: "relative",
+  left: "0px",
   width: "95%",
+  borderRadius: "10%"
 };
 
 const experienceTitle = {
   position: "relative",
-  fontSize: "1rem",
-
+  fontSize: ".9rem",
+  fontWeight: "500",
+  color: "#EBEBEB"
 };
 
 const experienceTeam = {
   position: "relative",
   fontSize: "14px",
+  color: "#B8B8B8"
 };
 
 const experienceDescription = {
   position: "relative",
   fontSize: "14px",
+  width: "80%",
+  color: "#999999"
 };
 
 const projectListContainer = {
@@ -263,12 +279,22 @@ const tagStyle = {
   position: "relative",
   width: "auto",
   height: "20%",
-  border: "1.5px black solid",
-  padding: "4px",
-  borderRadius: "15px",
+  border: "1.5px #688B58 solid",
+  padding: "8px",
+  borderRadius: "5%",
   margin: "15px 10px 0px 0px",
   fontSize: ".8rem",
 };
+
+const resumeLinkStyle = {
+    fontWeight: "14px",
+    color: "white"
+}
+
+const boldTextStyle = {
+    color: "#EBEBEB",
+    fontWeight: "550"
+}
 
 const MainPage = () => {
   return (
@@ -320,32 +346,36 @@ const MainPage = () => {
         <div style={scrollSectionBringLeft}>
           <div style={originStyle}>
             Back in 2017, I tried my hand at creating a game in Adobe Flash and
-            tumbled headfirst into the rabbit hole of coding and web
-            development. To develop my skills further, I completed a fullstack
-            bootcamp in SF, graduated from UC Berkeley, and worked at Amazon as a
-            software engineer for two years.
+            fell headfirst into the world of programming and web development. Over the next few years, I dedicated myself to learn programming by completing a <b style={boldTextStyle}>fullstack
+            bootcamp</b> in San Francisco, finishing my <b style={boldTextStyle}>bachelors at UC Berkeley</b>, and working at <b style={boldTextStyle}>Amazon as a
+            software engineer</b> for two years.
             <br></br>
             <br></br>
-            Now, I am searching for my next professional opportunity and looking
-            for fullstack development roles based in Seattle, WA.
+            Now, I am searching for my next professional opportunity, specifically
+            for <b style={boldTextStyle}>fullstack development roles</b> based in Seattle.
             <br></br>
             <br></br>
             My main focus these days is building products that meld my passion
             for games and web development. In my freetime, I've released a
-            Discord Bot that been downloaded in 1000+ servers, a web app for graphing album charts,
-            and a website that guesses Magic the Gathering card.
+            <b style={boldTextStyle}> Discord Bot</b> that been downloaded in 1000+ servers, 
+            a <b style={boldTextStyle}>browser application</b> for graphing album charts,
+            and a website that <b style={boldTextStyle}> guesses which Magic the Gathering</b> card you're thinking of.
             <br></br>
             <br></br>
             When I'm not on my computer, I'm lifting rocks at the gym, hosting
-            hot-pot at my apartment, or releasing music on my Soundcloud (this is a plug!).
+            hot-pot at my apartment, or releasing music on <b style={boldTextStyle} >my Soundcloud</b> (this is definitely a plug).
             <br></br>
             <br></br>I am actively seeking work opportunities. Here is my email:
             <br></br>
             <br></br>
             imdanieljae@gmail.com
+            <br></br>
+            <br></br>
+            <HiExternalLink/>
+            <a target="_blank" style={resumeLinkStyle} href="https://drive.google.com/file/d/1a3-2168ndwbbACzztowBK85TLkevTGpa/view?usp=sharing">Link to my resume</a>
           </div>
           <div id="scroll-experience" style={experienceListContainer}>
-            <div style={experienceStyle}>
+            <div className="experienceCard" style={experienceStyle}>
               <div style={experienceDateHeader}>
                 2022 - 2023
                 <br></br>
@@ -358,7 +388,7 @@ const MainPage = () => {
                 <div style={experienceDescription}>
                   <br></br>
                   Deliver high quality, robust production code for Amazon's
-                  access-control systems team. Lead design meetings to create
+                  access-control management team. Lead design meetings to create
                   scalable APIs for managing millions of internal resources.
                   Provide deliverables within engineering department through
                   close collaboration.
@@ -375,9 +405,9 @@ const MainPage = () => {
                 </div>
               </div>
             </div>
-            <div style={experienceStyle}>
+            <div className="experienceCard" style={experienceStyle}>
               <div style={experienceDateHeader}>
-                2020 - July 2021
+                2020 - 2021
                 <br></br>
               </div>
               <div style={experienceCard}>
@@ -402,7 +432,7 @@ const MainPage = () => {
                 </div>
               </div>
             </div>
-            <div style={experienceStyle}>
+            <div className="experienceCard" style={experienceStyle}>
               <div style={experienceDateHeader}>
                 May - Aug. 2019
                 <br></br>
@@ -488,7 +518,7 @@ const MainPage = () => {
 export default MainPage;
 
 const body = {
-  backgroundColor: "#DDD0C8",
+  backgroundColor: "#121212",
 };
 
 export const Head = () => {
