@@ -6,9 +6,10 @@ import { HiExternalLink } from "react-icons/hi"
 
 import scrollTo from "gatsby-plugin-smoothscroll";
 import testImg from "../images/icon.png"
-import ivyVines from "../images/ivy-vines.jpg"
+import secretH from "../images/secret-h.png"
+import pathfinder from "../images/pathfinder.png"
 
-import "../css/main.css"
+import "../pages/css/main.css"
 
 const pageStyle = {
   display: "flex",
@@ -63,6 +64,7 @@ const titleStyle = {
   fontWeight: "bold",
   margin: "5px",
   color: "#FFFFFF",
+  textDecoration: "none"
 };
 
 const subTitleStyle = {
@@ -164,10 +166,9 @@ const originStyle = {
 const experienceListContainer = {
   display: "flex",
   flexDirection: "column",
-//   border: "1px solid black",
   width: "450px",
   height: "1000px",
-  margin: "10vh 0 0 25px",
+  margin: "15vh 0 0 25px",
 };
 
 const experienceStyle = {
@@ -176,9 +177,14 @@ const experienceStyle = {
   height: "auto",
   color: "black",
   margin: "1rem 0 1rem 0",
-  padding: "25px 10px 25px 10px",
+  padding: "15px 0px 15px 25px",
 //   border: "1px solid black"
 };
+
+const experienceLink = {
+    textDecoration: "none",
+    color: "white"
+}
 
 const experienceDateHeader = {
   position: "relative",
@@ -188,22 +194,21 @@ const experienceDateHeader = {
   left: "-10px",
   top: "3px",
   fontWeight: "500",
-  color: "#B8B8B8",
-//   border: "1px solid white",
+  color: "#B8B8B8"
 };
 
 const experienceCard = {
   position: "relative",
   left: "0px",
   width: "95%",
-  borderRadius: "10%"
+  borderRadius: "10%",
 };
 
 const experienceTitle = {
   position: "relative",
   fontSize: ".9rem",
   fontWeight: "500",
-  color: "#EBEBEB"
+//   color: "#EBEBEB"
 };
 
 const experienceTeam = {
@@ -214,7 +219,7 @@ const experienceTeam = {
 
 const experienceDescription = {
   position: "relative",
-  fontSize: "14px",
+  fontSize: "13px",
   width: "80%",
   color: "#999999"
 };
@@ -222,78 +227,83 @@ const experienceDescription = {
 const projectListContainer = {
   display: "flex",
   flexDirection: "column",
-//   border: "1px solid white",
   width: "450px",
   height: "1000px",
-  margin: "10vh 0 0 25px",
+  margin: "0vh 0 0 25px",
 };
 
 const projectStyle = {
-  display: "flex",
-  width: "450px",
-  height: "300px",
-  border: "1px solid white",
-  color: "black",
-  margin: "1rem 0 0 0",
+    display: "flex",
+    width: "550px",
+    height: "auto",
+    color: "black",
+    margin: ".8rem 0 0rem 0",
+    padding: "10px 0px 5px 25px"
 };
 
 const projectPhotoHeader = {
-  position: "relative",
-  height: "30%",
-  width: "30%",
-  fontSize: ".8rem",
-  top: "5px",
-  border: "1px solid black",
-  margin: "-5px 10px 10px 0px"
+    position: "relative",
+    height: "100px",
+    borderRadius: "5%",
+    width: "30%",
+    left: "-20px",
+    top: "3px",
+    fontWeight: "500",
+    color: "#B8B8B8",
+    border: "1px solid #B8B8B8",
+    objectFit: "cover"
 };
 
 const projectCard = {
-  position: "relative",
-  width: "100%",
+    position: "relative",
+    left: "0px",
+    width: "100%",
+    borderRadius: "10%"
 };
 
 const projectTitle = {
-  position: "relative",
-  fontSize: "1rem",
-};
-
-const teamTitle = {
-  position: "relative",
-  fontSize: "14px",
+    position: "relative",
+    fontSize: ".9rem",
+    fontWeight: "500",
+    color: "#EBEBEB"
 };
 
 const projectDescription = {
   position: "relative",
-  fontSize: "14px",
+  fontSize: "12.5px",
+  width: "80%",
+  top: "-10px",
+  color: "#999999"
 };
 
 const tagContainer = {
   display: "flex",
   flexWrap: "wrap",
   position: "relative",
-  border: "1px black solid border",
-  height: "10%",
+  height: "10%"
 };
 
 const tagStyle = {
   position: "relative",
   width: "auto",
-  height: "20%",
-  border: "1.5px #688B58 solid",
-  padding: "8px",
-  borderRadius: "5%",
-  margin: "15px 10px 0px 0px",
-  fontSize: ".8rem",
+  padding: "5px 5px",
+  borderRadius: "10%",
+  margin: "15px 15px 0px 0px",
+  backgroundColor: "#152826",
+  fontSize: "11px",
+  color: "#5D9880"
 };
 
 const resumeLinkStyle = {
     fontWeight: "14px",
-    color: "white"
+    color: "white",
+    textDecoration: "none"
 }
 
 const boldTextStyle = {
     color: "#EBEBEB",
-    fontWeight: "550"
+    fontWeight: "550",
+    textDecoration: "none"
 }
 
 const MainPage = () => {
@@ -363,7 +373,7 @@ const MainPage = () => {
             <br></br>
             <br></br>
             When I'm not on my computer, I'm lifting rocks at the gym, hosting
-            hot-pot at my apartment, or releasing music on <b style={boldTextStyle} >my Soundcloud</b> (this is definitely a plug).
+            hot-pot at my apartment, or releasing music on <b style={boldTextStyle} > <a target="_blank" style={experienceLink} href="https://soundcloud.com/dufe-258062613">my Soundcloud</a></b> (this is definitely a plug).
             <br></br>
             <br></br>I am actively seeking work opportunities. Here is my email:
             <br></br>
@@ -372,10 +382,10 @@ const MainPage = () => {
             <br></br>
             <br></br>
             <HiExternalLink/>
-            <a target="_blank" style={resumeLinkStyle} href="https://drive.google.com/file/d/1a3-2168ndwbbACzztowBK85TLkevTGpa/view?usp=sharing">Link to my resume</a>
+            <a id="resumeLink" target="_blank" style={resumeLinkStyle} href="https://drive.google.com/file/d/1a3-2168ndwbbACzztowBK85TLkevTGpa/view?usp=sharing">Link to my resume</a>
           </div>
           <div id="scroll-experience" style={experienceListContainer}>
-            <div className="experienceCard" style={experienceStyle}>
+            <div className="experienceStyle" style={experienceStyle}>
               <div style={experienceDateHeader}>
                 2022 - 2023
                 <br></br>
@@ -383,126 +393,122 @@ const MainPage = () => {
                 2021 <i> Summer Intern</i>
               </div>
               <div style={experienceCard}>
-                <div style={experienceTitle}> Software Engineer 1 • Amazon </div>
-                <div style={experienceTeam}> AWS Security </div>
-                <div style={experienceDescription}>
-                  <br></br>
-                  Deliver high quality, robust production code for Amazon's
-                  access-control management team. Lead design meetings to create
-                  scalable APIs for managing millions of internal resources.
-                  Provide deliverables within engineering department through
-                  close collaboration.
-                  <br></br>
-                  <div style={tagContainer}>
-                    <span style={tagStyle}>System Design</span>
-                    <span style={tagStyle}>CI/CD</span>
-                    <span style={tagStyle}>AmazonCDK</span>
-                    <span style={tagStyle}>Spring</span>
-                    <span style={tagStyle}>PSQL</span>
-                    <span style={tagStyle}>Java</span>
-                    <span style={tagStyle}>Ruby</span>
-                  </div>
-                </div>
+                <a style={experienceLink} target="_blank" href="https://www.amazon.jobs/en/business_categories/amazon-security">
+                    <div id="experienceTitle" style={experienceTitle}> Software Engineer 1 • Amazon </div>
+                    <div style={experienceTeam}> AWS Security </div>
+                    <div style={experienceDescription}>
+                    <br></br>
+                    Deliver high quality, robust production code for Amazon's
+                    access-control management team. Lead design meetings to create
+                    scalable APIs for managing millions of internal resources.
+                    Provide deliverables within engineering department through
+                    close collaboration.
+                    <br></br>
+                    <div style={tagContainer}>
+                        <span style={tagStyle}>AmazonCDK</span>
+                        <span style={tagStyle}>Java</span>
+                        <span style={tagStyle}>System Design</span>
+                        <span style={tagStyle}>CI/CD</span>
+                        <span style={tagStyle}>Spring</span>
+                        <span style={tagStyle}>PSQL</span>
+                        <span style={tagStyle}>Git</span>
+                    </div>
+                    </div>
+                </a>
               </div>
+              
             </div>
-            <div className="experienceCard" style={experienceStyle}>
+            <div className="experienceStyle" style={experienceStyle}>
               <div style={experienceDateHeader}>
                 2020 - 2021
                 <br></br>
               </div>
               <div style={experienceCard}>
-                <div style={experienceTitle}>
-                  {" "}
-                  Fullstack Instructor • theCoderSchool{" "}
-                </div>
-                <div style={experienceTeam}> Berkeley Externship </div>
-                <div style={experienceDescription}>
-                  <br></br>
-                  Develop an interactive web app for Desmos that creates,
-                  imports, and saves sharable GIFS of graphs. Implement frontend
-                  layout in code, and developed efficient multi-capture mode.
-                  <br></br>
-                  <div style={tagContainer}>
-                    <span style={tagStyle}>React</span>
-                    <span style={tagStyle}>Redux.js</span>
-                    <span style={tagStyle}>JavaScript</span>
-                    <span style={tagStyle}>HTML</span>
-                    <span style={tagStyle}>CSS</span>
-                  </div>
-                </div>
+                <a style={experienceLink} target="_blank" href="https://www.thecoderschool.com/">
+                    <div id="experienceTitle" style={experienceTitle}>
+                    {" "}
+                    Fullstack Instructor • theCoderSchool{" "}
+                    </div>
+                    <div style={experienceTeam}> Berkeley Externship </div>
+                    <div style={experienceDescription}>
+                    <br></br>
+                    Translated my fullstack experience from bootcamp and internship, and taught it to 10+ high school students across the school year.
+                    Led monthly modules for peer instructors to learn React and web development.
+                    <br></br>
+                    <div style={tagContainer}>
+                        <span style={tagStyle}>React</span>
+                        <span style={tagStyle}>Python</span>
+                        <span style={tagStyle}>CSS</span>
+                        <span style={tagStyle}>Javascript</span>
+                    </div>
+                    </div>
+                </a>
               </div>
             </div>
-            <div className="experienceCard" style={experienceStyle}>
+            <div className="experienceStyle" style={experienceStyle}>
               <div style={experienceDateHeader}>
                 May - Aug. 2019
                 <br></br>
               </div>
               <div style={experienceCard}>
-                <div style={experienceTitle}>
-                  Software Engineer Co-Op • Desmos
-                </div>
-                <div style={experienceDescription}>
-                  <br></br>
-                  Develop an interactive web app for Desmos that creates,
-                  imports, and saves sharable GIFS of graphs. Implement frontend
-                  layout in code, and developed efficient multi-capture mode.
-                  <br></br>
-                  <div style={tagContainer}>
-                    <span style={tagStyle}>React</span>
-                    <span style={tagStyle}>Redux.js</span>
-                    <span style={tagStyle}>JavaScript</span>
-                    <span style={tagStyle}>HTML</span>
-                    <span style={tagStyle}>CSS</span>
-                  </div>
-                </div>
+              <a style={experienceLink} target="_blank" href="http://www.gifsmos.com/">
+                    <div id="experienceTitle" style={experienceTitle}>
+                    Software Engineer Co-Op • Desmos
+                    </div>
+                    <div style={experienceDescription}>
+                    <br></br>
+                    Develop an interactive web app for Desmos that creates,
+                    imports, and saves sharable GIFS of graphs. Implement frontend
+                    layout in code, and developed efficient multi-capture mode.
+                    <br></br>
+                    <div style={tagContainer}>
+                        <span style={tagStyle}>React</span>
+                        <span style={tagStyle}>Redux.js</span>
+                        <span style={tagStyle}>JavaScript</span>
+                        <span style={tagStyle}>HTML</span>
+                        <span style={tagStyle}>CSS</span>
+                    </div>
+                    </div>
+                </a>
               </div>
             </div>
           </div>
           <div id="scroll-projects" style={projectListContainer}>
-            <div style={projectStyle}>
-              <img src={testImg} style={projectPhotoHeader}/>
+            <div className="projectStyle" style={projectStyle}>
+              <img src={secretH} style={projectPhotoHeader}/>
               <div style={projectCard}>
-                <div style={projectTitle}> Software Engineer • Amazon </div>
-                <div style={teamTitle}> AWS Security </div>
+                <div id="experienceTitle" style={projectTitle}> Secret H. Discord Bot </div>
                 <div style={projectDescription}>
                   <br></br>
-                  Deliver high quality, robust production code for Amazon's
-                  access-control systems team. Lead design meetings to create
-                  scalable APIs for managing millions of internal resources.
-                  Provide deliverables within engineering department through
-                  close collaboration.
+                  A Discord app built during COVID that automatically
+                  moderates games of Secret Hitler over Discord. Unmask traitors,
+                  forge alliances, and ignite chaos in this intense social deduction game.
+                  <br></br>
+                  Now in 1000+ servers.
                   <br></br>
                   <div style={tagContainer}>
-                    <span style={tagStyle}>System Design</span>
-                    <span style={tagStyle}>CI/CD</span>
-                    <span style={tagStyle}>AmazonCDK</span>
-                    <span style={tagStyle}>Spring</span>
-                    <span style={tagStyle}>PSQL</span>
-                    <span style={tagStyle}>Java</span>
-                    <span style={tagStyle}>Ruby</span>
+                    <span style={tagStyle}>React</span>
+                    <span style={tagStyle}>Node.js</span>
+                    <span style={tagStyle}>Discord API</span>
+                    <span style={tagStyle}>Web Hosting</span>
                   </div>
                 </div>
               </div>
             </div>
-            <div style={projectStyle}>
-              <img src={testImg} style={projectPhotoHeader}/>
+            <div className="projectStyle" style={projectStyle}>
+              <img src={pathfinder} style={projectPhotoHeader}/>
               <div style={projectCard}>
-                <div style={projectTitle}>
-                  {" "}
-                  Software Engineer Co-Op • Desmos{" "}
+                <div id="experienceTitle" style={projectTitle}>
+                    Pathfinding Algorithm Visualizer
                 </div>
-                <div style={teamTitle}> AWS Security </div>
                 <div style={projectDescription}>
                   <br></br>
-                  Develop an interactive web app for Desmos that creates,
-                  imports, and saves sharable GIFS of graphs. Implement frontend
-                  layout in code, and developed efficient multi-capture mode.
+                  An inbrowser pathfinding visualizer for Djikstra's, A*, BFS/DFS with 
+                  the ability to add mazes.
                   <br></br>
                   <div style={tagContainer}>
                     <span style={tagStyle}>React</span>
-                    <span style={tagStyle}>Redux.js</span>
-                    <span style={tagStyle}>JavaScript</span>
-                    <span style={tagStyle}>HTML</span>
+                    <span style={tagStyle}>HTML5</span>
                     <span style={tagStyle}>CSS</span>
                   </div>
                 </div>

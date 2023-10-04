@@ -1,0 +1,45 @@
+a {
+    color: #EBEBEB;
+    text-decoration: "none";
+}
+
+#resumeLink:hover {
+    opacity: 50
+}
+
+.experienceStyle:hover {
+    position: relative;
+    animation-name: onexperiencehover;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+}
+
+#experienceTitle {
+    color: #EBEBEB
+}
+
+.experienceStyle:hover #experienceTitle {
+    color: #5D9880;
+    font-weight: 500
+}
+
+.projectStyle:hover {
+    position: relative;
+    animation-name: onexperiencehover;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+}
+
+.projectStyle:hover #experienceTitle {
+    color: #5D9880;
+    font-weight: 500
+}
+
+@keyframes onexperiencehover {
+    from {
+        background-color: #121212
+    }
+    to {
+        background-color: #1F1F1F;
+    }
+}
