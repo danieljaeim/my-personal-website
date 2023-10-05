@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://www.yourdomain.tld`,
   },
-  pathPrefix: "/my-personal-website",
+  pathPrefix: "/",
   plugins: [
     'gatsby-plugin-smoothscroll',
     {
