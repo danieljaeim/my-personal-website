@@ -12,15 +12,22 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
     "gatsby": "^5.12.4",
     "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-smoothscroll": "^1.2.0",
+    "jquery": "^3.7.1",
     "react": "^18.2.0",
+    "react-animated-cursor": "^2.10.1",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.11.0"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.20",
+    "gh-pages": "^6.0.0"
   }
 }

@@ -1,0 +1,35 @@
+.link > div {
+    position: relative;
+    animation-name: slideback;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+
+.link:hover > div {
+    position: relative;
+    animation-name: slide;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0)
+    }
+    to {
+        transform: translateX(50px)
+    }
+}
+
+@keyframes slideback {
+    from {
+        transform: translateX(50px)
+    }
+    to {
+        transform: translateX(0)
+    }
+}
+
+.sociallink:hover {
+    opacity: .5
+}

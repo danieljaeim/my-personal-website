@@ -4,10 +4,12 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { BiLogoGmail } from "react-icons/bi";
 import { HiExternalLink } from "react-icons/hi"
 
+import AnimatedCursor from "react-animated-cursor"
+
 import scrollTo from "gatsby-plugin-smoothscroll";
-import testImg from "../images/icon.png"
 import secretH from "../images/secret-h.png"
 import pathfinder from "../images/pathfinder.png"
+import spotluck from "../images/spotluck.png"
 
 import "../pages/css/main.css"
 
@@ -78,24 +80,27 @@ const subTitleStyle = {
 };
 
 const descriptionTitleStyle = {
+  position: "relative",
   alignSelf: "start",
   fontSize: "1rem",
   // border: "1px solid black",
   fontFamily: "Verdana, sans-serif",
-  margin: "15px 0px 0px 7px",
+  margin: "15px 0px 5vh 7px",
   color: "#ADADAD",
   lineHeight: "1.3"
 };
 
 const linkContainer = {
+  position: "relative",
   fontSize: "2.5em",
   flexDirection: "row",
   justifyContent: "space-between",
   alignSelf: "start",
   height: "12vh",
   width: "60%",
-  margin: "10vh 5vh 0 5vh",
-  color: "#ADADAD"
+  margin: "10vh 5vh 0px 5vh",
+  color: "#ADADAD",
+  top: "20vh"
 };
 
 const linkStyle = {
@@ -228,7 +233,7 @@ const projectListContainer = {
   display: "flex",
   flexDirection: "column",
   width: "450px",
-  height: "1000px",
+  height: "600px",
   margin: "0vh 0 0 25px",
 };
 
@@ -265,7 +270,7 @@ const projectTitle = {
     position: "relative",
     fontSize: ".9rem",
     fontWeight: "500",
-    color: "#EBEBEB"
+    // color: "#EBEBEB"
 };
 
 const projectDescription = {
@@ -300,15 +305,34 @@ const resumeLinkStyle = {
     textDecoration: "none"
 }
 
+const projectLinkStyle = {
+  position: "relative",
+  fontWeight: "14px",
+  color: "white",
+  textDecoration: "none"
+}
+
 const boldTextStyle = {
     color: "#EBEBEB",
     fontWeight: "550",
     textDecoration: "none"
 }
 
+
 const MainPage = () => {
   return (
     <main style={pageStyle}>
+    <AnimatedCursor 
+      color="220, 90, 90"
+      innerSize={10}
+      outerSize={45}
+      innerScale={1}
+      outerScale={1.9}
+      outerAlpha={1}
+      outerStyle={{
+        mixBlendMode: 'exclusion'
+      }}
+    />
       <div style={sideHeader}>
         <div style={sideHeaderBringRight}>
           <div style={titleContainer}>
@@ -320,34 +344,46 @@ const MainPage = () => {
             </div>
           </div>
           <div style={linkContainer}>
-            <div onClick={() => scrollTo("#scroll-about")} style={linkStyle}>
+            <div
+              id="pageLink" 
+              onClick={() => scrollTo("#scroll-about")}
+              style={linkStyle}>
               {" "}
               ABOUT
             </div>
             <div
+              id="pageLink" 
               onClick={() => scrollTo("#scroll-experience")}
               style={linkStyle}
             >
               {" "}
               EXPERIENCE
             </div>
-            <div onClick={() => scrollTo("#scroll-projects")} style={linkStyle}>
+            <div 
+              id="pageLink" 
+              onClick={() => scrollTo("#scroll-projects")}
+              style={linkStyle}>
               {" "}
               PROJECTS
             </div>
           </div>
           <div style={socialsContainer}>
             <div style={socialStyle}>
-              {" "}
-              <AiFillGithub />{" "}
+              <a target="_blank" href="https://github.com/danieljaeim">
+                <AiFillGithub />
+              </a>
             </div>
             <div style={socialStyle}>
               {" "}
-              <AiFillLinkedin />{" "}
+              <a target="_blank" href="https://www.linkedin.com/in/imdanieljae/">
+                <AiFillLinkedin />{" "}
+              </a>
             </div>
             <div style={socialStyle}>
               {" "}
-              <BiLogoGmail />{" "}
+              <a target="_blank" href="mailto:imdanieljae@gmail.com">
+                <BiLogoGmail />{" "}
+              </a>
             </div>
           </div>
         </div>
@@ -436,10 +472,11 @@ const MainPage = () => {
                     Led monthly modules for peer instructors to learn React and web development.
                     <br></br>
                     <div style={tagContainer}>
-                        <span style={tagStyle}>React</span>
+                        <span style={tagStyle}>Excel</span>
                         <span style={tagStyle}>Python</span>
-                        <span style={tagStyle}>CSS</span>
+                        <span style={tagStyle}>HTML5</span>
                         <span style={tagStyle}>Javascript</span>
+                        <span style={tagStyle}>Powerpoint Presentations</span>
                     </div>
                     </div>
                 </a>
@@ -477,45 +514,68 @@ const MainPage = () => {
             <div className="projectStyle" style={projectStyle}>
               <img src={secretH} style={projectPhotoHeader}/>
               <div style={projectCard}>
-                <div id="experienceTitle" style={projectTitle}> Secret H. Discord Bot </div>
-                <div style={projectDescription}>
-                  <br></br>
-                  A Discord app built during COVID that automatically
-                  moderates games of Secret Hitler over Discord. Unmask traitors,
-                  forge alliances, and ignite chaos in this intense social deduction game.
-                  <br></br>
-                  Now in 1000+ servers.
-                  <br></br>
-                  <div style={tagContainer}>
-                    <span style={tagStyle}>React</span>
-                    <span style={tagStyle}>Node.js</span>
-                    <span style={tagStyle}>Discord API</span>
-                    <span style={tagStyle}>Web Hosting</span>
+                <a style={experienceLink} target="_blank" href="https://discord.com/api/oauth2/authorize?client_id=1133129369792020640&permissions=326417774672&scope=bot">
+                  <div id="experienceTitle" style={projectTitle}> Secret H. Discord Bot </div>
+                  <div style={projectDescription}>
+                    <br></br>
+                    A Discord app built during COVID that automatically
+                    moderates games of Secret Hitler over Discord. Unmask traitors,
+                    forge alliances, and ignite chaos in this intense social deduction game.
+                    <br></br>
+                    Now in 100+ servers.
+                    <br></br>
+                    <div style={tagContainer}>
+                      <span style={tagStyle}>Node.js</span>
+                      <span style={tagStyle}>Discord API</span>
+                      <span style={tagStyle}>Web Hosting</span>
+                    </div>
                   </div>
-                </div>
+                </a>
+              </div>
+            </div>
+            <div className="projectStyle" style={projectStyle}>
+              <img src={spotluck} style={projectPhotoHeader}/>
+              <div style={projectCard}>
+                <a style={experienceLink} target="_blank" href="https://www.google.com">
+                  <div id="experienceTitle" style={projectTitle}> Spotluck </div>
+                  <div style={projectDescription}>
+                    <br></br>
+                    A music recommendation app and inbrowser Spotify player, that recommends
+                    new songs based on your top 100 most listened artists. Leverages the Spotify API
+                    and built with React.
+                    <br></br>
+                    <div style={tagContainer}>
+                      <span style={tagStyle}>React</span>
+                      <span style={tagStyle}>Node.js</span>
+                      <span style={tagStyle}>Spotify SDK</span>
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
             <div className="projectStyle" style={projectStyle}>
               <img src={pathfinder} style={projectPhotoHeader}/>
               <div style={projectCard}>
-                <div id="experienceTitle" style={projectTitle}>
-                    Pathfinding Algorithm Visualizer
-                </div>
-                <div style={projectDescription}>
-                  <br></br>
-                  An inbrowser pathfinding visualizer for Djikstra's, A*, BFS/DFS with 
-                  the ability to add mazes.
-                  <br></br>
-                  <div style={tagContainer}>
-                    <span style={tagStyle}>React</span>
-                    <span style={tagStyle}>HTML5</span>
-                    <span style={tagStyle}>CSS</span>
+                <a style={experienceLink} target="_blank" href="https://www.google.com">
+                  <div id="experienceTitle" style={projectTitle}>
+                      Pathfinding Algorithm Visualizer
                   </div>
-                </div>
+                  <div style={projectDescription}>
+                    <br></br>
+                    An inbrowser pathfinding visualizer for Djikstra's, A*, BFS/DFS with 
+                    the ability to add mazes.
+                    <br></br>
+                    <div style={tagContainer}>
+                      <span style={tagStyle}>React</span>
+                      <span style={tagStyle}>HTML5</span>
+                      <span style={tagStyle}>CSS</span>
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
-        </div>
+          </div>
       </div>
     </main>
   );
@@ -525,13 +585,14 @@ export default MainPage;
 
 const body = {
   backgroundColor: "#121212",
+  overflowX: "hidden"
 };
 
 export const Head = () => {
   return (
     <>
       <html lang="en" />
-      <title>Daniel Jae Im</title>
+      <title> 🇩  Daniel Jae Im</title>
       <meta name="description" content="Hello World" />
       <body style={body} />
     </>

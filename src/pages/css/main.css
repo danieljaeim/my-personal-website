@@ -35,6 +35,14 @@ a {
     font-weight: 500
 }
 
+#pageLink:hover {
+    color: white
+}
+
+#projectLink:hover {
+    color: white
+}
+
 @keyframes onexperiencehover {
     from {
         background-color: #121212
