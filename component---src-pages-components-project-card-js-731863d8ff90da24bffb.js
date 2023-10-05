@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmy_personal_webpage=self.webpackChunkmy_personal_webpage||[]).push([[74],{5615:function(e,n,a){a.r(n);var r=a(7294);n.default=function(e){return r.createElement(r.Fragment,null)}}}]);
+//# sourceMappingURL=component---src-pages-components-project-card-js-731863d8ff90da24bffb.js.map
