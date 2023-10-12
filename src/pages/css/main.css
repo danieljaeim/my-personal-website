@@ -30,6 +30,15 @@ a {
     animation-fill-mode: forwards;
 }
 
+.projectStyle:hover #projectTitle {
+    color: #5D9880;
+    font-weight: 500
+}
+
+.projectStyle:hover > #projectPhotoHover {
+    opacity: 0
+}
+
 .projectStyle:hover #experienceTitle {
     color: #5D9880;
     font-weight: 500
@@ -50,4 +59,8 @@ a {
     to {
         background-color: #1F1F1F;
     }
+}
+
+.body {
+    overflow-x: hidden
 }
